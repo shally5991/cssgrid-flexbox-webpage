@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+       <!-- top  -->
+        <div class="top">
+        
+            <header class="hero">
+                <h1>Terry's Taco Joint</h1>
+                <p>Pretty Good Tacos!</p>
+            </header>
+            
+            <div class="cta cta1">
+                <p class="price">$1.99</p>
+                <p>Tacos</p>
+            </div>
+            <div class="cta cta2">
+                <p class="price">$3.99</p>
+                <p>Kombucha</p>
+            </div>
+        </div>
+
+        <!-- navigation -->
+        <nav class="menu">
+           <!-- menu button for smaller screen  -->
+            <button aria-expanded="false" aria-controls="menu-list">
+                <span class="close"><i class="material-icons">close</i></span>
+                <span class="open"><i class="material-icons" ">menu</i></span>
+                Menu             
+            </button>
+            <!-- menu list for big screen -->
+            <ul class="menu-list">
+                <li class=""><a href="#">Tacos</a></li>
+                <li class=""><a href="#">Beers</a></li>
+                <li class=""><a href="#">Wines</a></li>
+                <li class=""><a href="#">Deserts</a></li>
+                <li class=""><a href="#">Reservation</a></li>
+            </ul>
+        </nav>
+
+        
+        <div class="features">
+            <div class="feature">
+                
+                <div><img src="images/icons8-taco-48.png" alt=""></div>
+                <h3>Tacos</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Eaque, omnis voluptatibus? Fugit maiores veritatis minima
+                      tempore nostrum at doloribus architecto .</p>
+            </div>
+            
+            <div class="feature">
+                
+                <div class="icon"><img src="images/icons8-wine-glass-48.png" alt=""></div>
+                <h3>Wine</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Eaque, omnis voluptatibus? Fugit maiores veritatis minima
+                      tempore nostrum at doloribus architecto .</p>
+            </div>
+            <div class="feature">
+                <div class="icon"><img src="images/icons8-beer-mug-48.png" alt=""></div>
+                <h3>Beer</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Eaque, omnis voluptatibus? Fugit maiores veritatis minima
+                      tempore nostrum at doloribus architecto .</p>
+            </div>
+            <!-- https://icons8.com/icons/set/musical-notes -->
+            <div class="feature">
+                <div class="icon"><img src="images/icons8-musical-notes-48.png" alt=""></div>
+                <h3>Music</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Eaque, omnis voluptatibus? Fugit maiores veritatis minima
+                      tempore nostrum at doloribus architecto .</p>
+            </div>
+        </div>
+
+
+
+        <div class="about">
+            <div class="image">
+                <img src="images/PngItem_1081289.png" alt="">
+            </div>
+            <div>
+                <h1>Featured Taco</h1>
+                <p>slim profolia, easy to hold and loaded with cheese.
+                    This is the one you have been waiting for
+                </p>
+                <button>Learn more<i class="material-icons">arrow_forward	
+                </i></button>
+            </div>
+        </div>
+
+
+        <div class="gallery">
+            <h2>Insta stories</h2>
+        <img src="https://source.unsplash.com/random/401x400" alt="">
+        <img src="https://source.unsplash.com/random/402x400" alt="">
+        <img src="https://source.unsplash.com/random/403x400" alt="">
+        <img src="https://source.unsplash.com/random/404x400" alt="">
+        <img src="https://source.unsplash.com/random/405x400" alt="">
+        <img src="https://source.unsplash.com/random/406x400" alt="">
+        <img src="https://source.unsplash.com/random/407x400" alt="">
+        <img src="https://source.unsplash.com/random/408x400" alt="">
+        <img src="https://source.unsplash.com/random/409x400" alt="">
+        <img src="https://source.unsplash.com/random/410x400" alt="">
+        <img src="https://source.unsplash.com/random/411x400" alt="">
+        <img src="https://source.unsplash.com/random/412x400" alt="">
+        <img src="https://source.unsplash.com/random/413x400" alt="">
+        <img src="https://source.unsplash.com/random/414x400" alt="">
+        </div>
+    </div>
+    <script>
+        const navButton = document.querySelector('button[aria-expanded]');
+        
+        function toggleNav({target}) {
+            const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+            navButton.setAttribute('aria-expanded',!expanded);
+           
+        }
+
+        navButton.addEventListener('click',toggleNav);
+    </script>
+</body>
+</html>

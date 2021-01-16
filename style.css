@@ -1,0 +1,265 @@
+/* basic design  */
+*{
+    box-sizing: border-box;
+    }
+    .top{
+        /* border:1px solid black; */
+    }
+    .top > * {
+        /* border: 2px solid red; */
+        box-shadow:         inset 0 0 10px #1a0303;
+    }
+    .hero  > *
+    {
+        margin: 2px;
+        padding:5px;
+        /* border: 2px solid blanchedalmond; */
+    }
+
+body{
+    /* margin: 0px,100px; */
+    font-size: 15px;
+    background: linear-gradient(to bottom right, #e649d6, #40B2E1);}
+    
+   
+ button{
+     background:#ffc600;
+     border:0;
+     padding : 10px;
+
+ }
+ img {
+     max-width: 100%;
+ }
+/* wrapper */
+.wrapper{
+    display: grid;
+    grid-gap: 20px;
+}
+
+ /* top element */
+ .top{
+     display: grid;
+     grid-template-areas: 
+     "hero hero cta1"
+     "hero hero cta2";
+      grid-gap: 20px;
+  }
+  .hero{
+      color:rgb(247, 241, 241);
+      text-shadow: 2px 2px 4px #1b0861;
+      grid-area:hero;
+      min-height: 400px;
+      /* background: white url(chad-montano-lP5MCM6nZ5A-unsplash.jpg); */
+      background: white url(jeswin-thomas-PtfRiBumfQU-unsplash.jpg);
+      background-size: cover ;
+      background-position: bottom;
+      padding:50px;
+      
+      display:flex;
+      flex-direction: column;
+      justify-content: start ;
+      align-items: flex-start;
+
+
+  }
+  .hero > * {
+      background-color: rgb(245, 97, 29);
+      
+  }
+
+  .cta{
+      background-color: rgb(247, 247, 75);
+      display: grid;
+      justify-content: center;
+      align-content: center;
+
+  }
+  .cta > * {
+      margin: 0;
+      text-align: center;
+      font-weight: 600;
+      text-shadow: 2px 2px 5px #b8c507;
+  }
+  .cta1{
+    grid-area:cta1;
+  }
+  .cta2{
+      grid-area: cta2;
+  }
+  .price {
+      font-size: 5vw;
+  }
+  /* navigation */
+  .menu ul{
+      list-style-type: none;
+      /* border :2px solid red; */
+      display:grid;
+      /* margin:0; */
+      padding: 0;
+      grid-gap: 10px;
+     
+      
+      /* grid-template-columns: repeat(5,1fr); */
+      grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+  }
+.menu  a{
+    background-color: rgb(247, 222, 6);
+    /* bydefault anchor element are inline so they go as far as they need to be 
+    making them block will stretch them all the way long */
+    display: block;
+    padding:10px;
+    text-align: center;
+    text-decoration: none;
+    color:black;
+    font-size: 20px;
+
+    /* font-weight: 800; */
+    box-shadow: inset 0 0 10px #1a0303;
+    transition: transform .2s;
+    /* text-transform: uppercase; */
+    }
+.menu a:hover{
+    transform: scale(1.05);
+}
+/* attribute selector in the css */
+[aria-controls="menu-list"]{
+    display: none;
+}
+
+
+/* Features */
+.features{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+}
+.feature{
+    background-color: white;
+    text-align: center;
+    font-weight: 400;
+    margin: 0;
+    padding: 4px;
+    box-shadow:inset 0 0 40px #102f3f
+}
+.feature > *{
+    margin : 0;
+    padding: 4px;
+}
+/* about */
+.about{
+    background: white;
+    display:grid;
+    grid-gap: 20px;
+    grid-template-columns: 400px 1fr;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+
+
+}
+.gallery {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    justify-items: center ;
+
+}
+.gallery  h2 {
+    grid-column: 1 / -1;
+    margin: 0;
+    display:grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    text-align: center;
+
+}
+img{
+    max-width: 100%;
+    /* display: block; */
+    box-shadow:  0 0 0 10px hsl(0, 53%, 50%),;
+
+    /* max-height: 100%; */
+}
+.gallery img{
+    display: block;
+    max-width: 100%;
+}
+.gallery h2::after,
+.gallery h2::before {
+    display: block;
+    content: '';
+    height: 10px;
+    background:linear-gradient(to left, rgb(251, 255, 10), transparent);
+
+
+}
+.gallery h2:after{
+    background: linear-gradient(to right, yellow,transparent);
+}
+.gallery  div{
+    border-radius: 6;
+    border: 1px solid rgb(94, 90, 90);
+    box-shadow: 5px 5px 8px #f0b9b9;;
+
+
+}
+@media (max-width:1000px){
+    .menu{
+        order:-1;
+        perspective: 100px;
+       
+    }
+    [aria-controls="menu-list"]{
+        display: block;
+    }
+    .menu ul {
+        max-height: 0;
+        transform:rotateX(90deg);
+        transition:all 0.5s;
+        overflow: hidden;
+    }
+    [aria-expanded="true"]~ul {
+        display: grid;
+        max-height: 500px;
+        transform :rotateX(0);
+    }
+    [aria-expanded="false"].close {
+        display:none ;
+    }
+    [aria-expanded="true"].close {
+        display: inline-block
+        ;
+    }
+    [aria-expanded="true"].open {
+        display:none;
+    }
+
+
+
+}
+@media (max-width:700px)
+{
+    .top{
+        grid-template-areas: 
+        "hero hero"
+        "cta1 cta2";
+    }
+    
+}
+@media (max-width:500px)
+{
+    .top{
+        grid-template-areas: 
+        "hero"
+        "cta1"
+        "cta2";
+    }
+    
+}
+@media (max-width:700px){
+    .about {
+        grid-template-columns: 1fr;
+    }
+}
